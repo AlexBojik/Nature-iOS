@@ -15,9 +15,9 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "FA7899652533688900152247"
-               BuildableName = "&#x41f;&#x440;&#x438;&#x440;&#x43e;&#x434;&#x430;26.app"
-               BlueprintName = "&#x41f;&#x440;&#x438;&#x440;&#x43e;&#x434;&#x430;26"
-               ReferencedContainer = "container:&#x41f;&#x440;&#x438;&#x440;&#x43e;&#x434;&#x430;26.xcodeproj">
+               BuildableName = "Nature26.app"
+               BlueprintName = "Nature26"
+               ReferencedContainer = "container:Nature26.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
       </BuildActionEntries>
@@ -45,9 +45,9 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "FA7899652533688900152247"
-            BuildableName = "&#x41f;&#x440;&#x438;&#x440;&#x43e;&#x434;&#x430;26.app"
-            BlueprintName = "&#x41f;&#x440;&#x438;&#x440;&#x43e;&#x434;&#x430;26"
-            ReferencedContainer = "container:&#x41f;&#x440;&#x438;&#x440;&#x43e;&#x434;&#x430;26.xcodeproj">
+            BuildableName = "Nature26.app"
+            BlueprintName = "Nature26"
+            ReferencedContainer = "container:Nature26.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
    </LaunchAction>
@@ -62,9 +62,9 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "FA7899652533688900152247"
-            BuildableName = "&#x41f;&#x440;&#x438;&#x440;&#x43e;&#x434;&#x430;26.app"
-            BlueprintName = "&#x41f;&#x440;&#x438;&#x440;&#x43e;&#x434;&#x430;26"
-            ReferencedContainer = "container:&#x41f;&#x440;&#x438;&#x440;&#x43e;&#x434;&#x430;26.xcodeproj">
+            BuildableName = "Nature26.app"
+            BlueprintName = "Nature26"
+            ReferencedContainer = "container:Nature26.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
    </ProfileAction>

@@ -4,6 +4,7 @@ import Foundation
 protocol ILayerService {
     var networkService: INetworkService { get }
     var userService: IUserService { get }
+    var fileService: IFileService { get }
     
     var layers: [Layer] { get set }
     var layersChanged: Bool { get set }
@@ -20,6 +21,7 @@ class LayerService: ILayerService {
     
     var networkService: INetworkService
     var userService: IUserService
+    var fileService: IFileService
     
     var layersDescripton: String {
         var res = ""
@@ -33,9 +35,10 @@ class LayerService: ILayerService {
         return res
     }
     
-    init(_ networkService: INetworkService, _ userService: IUserService) {
+    init(_ networkService: INetworkService, _ userService: IUserService, _ fileService: IFileService) {
         self.networkService = networkService
         self.userService = userService
+        self.fileService = fileService
     }
     
     private var dictionary: [Int: Layer] = [:]
@@ -58,7 +61,12 @@ class LayerService: ILayerService {
                     if child.visible {
                         if !child.loading, style.sourceIsNotLoad(child.identifier) {
                             child.loading = true
-                            networkService.getLayer(url, child, style.addLayer)
+                            
+                            if let shape = fileService.getShape(for: child) {
+                                style.addLayer(shape, child)
+                            } else {
+                                networkService.getLayer(url, child, style.addLayer)
+                            }
                         }
                         if !child.clusterLoading, style.sourceIsNotLoad(child.clusterIdentifier), child.cluster ?? false {
                             child.clusterLoading = true

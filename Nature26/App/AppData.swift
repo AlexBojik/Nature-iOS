@@ -4,7 +4,8 @@ import SwiftUI
 class AppData: ObservableObject {
     var networkService: INetworkService
     var userService: IUserService
-    
+    var fileService: IFileService
+
     @Published var showLayerListDescription: Bool = false
     @Published var flyToLocationIsActive: Bool = false
     @Published var baseLayerService: IBaseLayerService
@@ -23,12 +24,14 @@ class AppData: ObservableObject {
     init() {
         networkService = NetworkService(networkManager: NetworkManager())
         userService = UserService(networkService)
+        fileService = FileService(CoreFileManager())
+        
         baseLayerService = BaseLayerService(networkService)
-        layerService = LayerService(networkService, userService)
+        layerService = LayerService(networkService, userService, fileService)
         featureService = FeatureService(networkService, userService)
         notificationService = NotificationService()
         newsService = NewsService(networkService)
-
+        
         baseLayerService.updateLayers()
         layerService.updateLayers()
 

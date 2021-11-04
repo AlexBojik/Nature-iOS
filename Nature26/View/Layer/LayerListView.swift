@@ -17,6 +17,10 @@ struct LayerListView: View {
                 LayerSymbolView(symbol: layer.symbol)
                 
                 Text(layer.name)
+                
+                Spacer()
+                
+                LayerLoadButtonView(layer: layer)
             }
             Button(action: accept, label: { Text(Config.acceptText) }).padding(.bottom)
         }

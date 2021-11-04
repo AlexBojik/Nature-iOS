@@ -23,7 +23,7 @@ enum Config {
     static let esiaUrl = "http://nature.mpr26.ru/api/auth"
     static let baseUrl = "http://nature.mpr26.ru/api/"
     static let authScheme = "nature26"
-    static let images = ["fish", "san", "pit", "tech", "rekr", "dam", "resh", "cont", "reddozer", "greendozer"]
+    static let images = ["fish", "san", "pit", "tech", "rekr", "dam", "resh", "cont", "reddozer", "greendozer", "min", "hands", "list", "planet", "tree", "simpletree", "duck"]
     static let defaultBase = BaseLayer(
         id: 2,
         name: "bing",
