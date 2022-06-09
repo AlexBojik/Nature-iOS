@@ -28,7 +28,7 @@ class NewsService: INewsService {
         loading = true
         objectWillChange()
 
-        networkService.getNews(Config.baseUrl + "news") { news in
+        networkService.getNews(Config.baseUrl + "news_list") { news in
             DispatchQueue.main.async {
                 self.news = news ?? ""
                 self.loading = false
