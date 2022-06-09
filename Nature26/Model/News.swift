@@ -26,9 +26,9 @@ class NewsParser: IParser {
         let decoder = JSONDecoder()
         decoder.dateDecodingStrategy = .iso8601
         let newsArray = try? decoder.decode([News].self, from: data)
-        
-        
-        guard let newsArray = newsArray else { return nil }
+
+        guard let newsArray = newsArray?.sorted(by: { $0.start > $1.start}) else { return nil }
+    
         
         let dateFormatterPrint = DateFormatter()
         dateFormatterPrint.dateFormat = "dd MMMM yyyy"
