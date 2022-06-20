@@ -20,8 +20,8 @@ enum Config {
     static let zoomLevel = 13.0
     static let tileSize = 256
     static let maximumZoomLevel = 18.6
-    static let esiaUrl = "http://nature.mpr26.ru/api/auth"
-    static let baseUrl = "http://nature.mpr26.ru/api/"
+    static let esiaUrl = "https://nature.mpr26.ru/api/auth"
+    static let baseUrl = "https://nature.mpr26.ru/api/"
     static let authScheme = "nature26"
     static let images = ["fish", "san", "pit", "tech", "rekr", "dam", "resh", "cont", "reddozer", "greendozer", "min", "hands", "list", "planet", "tree", "simpletree", "duck"]
     static let defaultBase = BaseLayer(
