@@ -34,3 +34,6 @@ struct MenuView: View {
         .buttonStyle(RoundIconButtonStyle())
     }
 }
+#Preview {
+    MenuView()
+}

@@ -34,3 +34,6 @@ struct SendButtonView: View {
         }
     }
 }
+#Preview {
+    SendButtonView()
+}
