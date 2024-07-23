@@ -20,25 +20,34 @@ class MapTools {
         ]
 
         for mask in regMasks {
-            let matches = mask.matches(in: trimmedValue, range: trimmedValue.nsRange)
-            if let match = matches.first {
-                let lonRange = match.range(withName: "lon")
-                let latRange = match.range(withName: "lat")
-                
-                if let substringLonRange = Range(lonRange, in: trimmedValue),
-                   let substringLatRange = Range(latRange, in: trimmedValue)
-                {
-                    let latStr = String(trimmedValue[substringLatRange])
-                    let lonStr = String(trimmedValue[substringLonRange])
-
-                    if let lat = CLLocationDegrees(latStr),
-                       let lon = CLLocationDegrees(lonStr) {
-                        let result = CLLocationCoordinate2D(latitude: lat, longitude: lon)
-                        return result
-                    }
-                }
+            if let coord = extractCoordFromRegexp(mask: mask, string: trimmedValue) {
+                return coord
             }
         }
         return nil
+
+        func extractCoordFromRegexp(mask: NSRegularExpression, string: String) -> CLLocationCoordinate2D? {
+            let matches = mask.matches(in: string, range: string.nsRange)
+
+            guard let match = matches.first else { return nil }
+
+            let lonRange = match.range(withName: "lon")
+            let latRange = match.range(withName: "lat")
+
+            guard let substringLonRange = Range(lonRange, in: string),
+                  let substringLatRange = Range(latRange, in: string) else {
+                return nil
+            }
+
+            let latStr = String(string[substringLatRange])
+            let lonStr = String(string[substringLonRange])
+
+            if let lat = CLLocationDegrees(latStr),
+               let lon = CLLocationDegrees(lonStr) {
+                return CLLocationCoordinate2D(latitude: lat, longitude: lon)
+            }
+
+            return nil
+        }
     }
 }
