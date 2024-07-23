@@ -53,7 +53,7 @@ class LayerService: ILayerService {
     }
     var layersChanged = false
     
-    func updateLayerList(_ style: IMGLStyleWorkWithLayer) {
+    func updateLayerList(_ style: IMGLStyleWorkWithLayer) {        
         if layersChanged {
             layersChanged = false
             layers.forEach { layer in

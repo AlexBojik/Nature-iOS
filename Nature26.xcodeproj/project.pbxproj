@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		753EE19D2C4FC59C0065B59D /* MapTools.swift in Sources */ = {isa = PBXBuildFile; fileRef = 753EE19C2C4FC59C0065B59D /* MapTools.swift */; };
 		FA04765D25456D4D0030BBCD /* FeatureListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA04765C25456D4D0030BBCD /* FeatureListView.swift */; };
 		FA04765F25456FBC0030BBCD /* UIScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA04765E25456FBC0030BBCD /* UIScreen.swift */; };
 		FA04766125459E300030BBCD /* Feature.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA04766025459E300030BBCD /* Feature.swift */; };
@@ -101,6 +102,7 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		753EE19C2C4FC59C0065B59D /* MapTools.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapTools.swift; sourceTree = "<group>"; };
 		FA04765C25456D4D0030BBCD /* FeatureListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeatureListView.swift; sourceTree = "<group>"; };
 		FA04765E25456FBC0030BBCD /* UIScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIScreen.swift; sourceTree = "<group>"; };
 		FA04766025459E300030BBCD /* Feature.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Feature.swift; sourceTree = "<group>"; };
@@ -275,6 +277,7 @@
 			children = (
 				FA925F7D27106D3F003C3603 /* NetworkManager.swift */,
 				FAF10CDF273409A400EE3533 /* FileManager.swift */,
+				753EE19C2C4FC59C0065B59D /* MapTools.swift */,
 			);
 			path = Core;
 			sourceTree = "<group>";
@@ -491,6 +494,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				FA8232D326CBDCD800BF2825 /* News.swift in Sources */,
+				753EE19D2C4FC59C0065B59D /* MapTools.swift in Sources */,
 				FA2BA4BA2715CA0C00AB569C /* LayerListDecription.swift in Sources */,
 				FAF356F9270DD29200D34017 /* MGLStyleDrawController.swift in Sources */,
 				FAFDDE8F2542F64A00B7EDC3 /* MainView.swift in Sources */,

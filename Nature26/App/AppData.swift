@@ -1,5 +1,6 @@
 
 import SwiftUI
+import Mapbox
 
 class AppData: ObservableObject {
     var networkService: INetworkService
@@ -8,6 +9,7 @@ class AppData: ObservableObject {
 
     @Published var showLayerListDescription: Bool = false
     @Published var flyToLocationIsActive: Bool = false
+    @Published var flyToLocationCoord: CLLocationCoordinate2D? = nil
     @Published var baseLayerService: IBaseLayerService
     @Published var layerService: ILayerService
     @Published var featureService: IFeatureService

@@ -9,4 +9,7 @@ extension String {
             documentAttributes: nil)
         return attributedString?.string ?? ""
     }
+    var nsRange: NSRange {
+        return NSRange(self.startIndex..<self.endIndex, in: self)
+    }
 }
