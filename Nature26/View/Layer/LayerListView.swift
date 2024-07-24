@@ -10,17 +10,18 @@ struct LayerListView: View {
             TitleTextView(text: Config.layerListName)
             List(appData.layerService.layers, children: \.layers) { layer in
                 // checkbox
-                Button(action: { clickLayer(layer) }, label: { Image(systemName: layer.state()) })
-                
-                LayerIconView(icon: layer.icon)
-                LayerColorView(color: layer.color)
-                LayerSymbolView(symbol: layer.symbol)
-                
-                Text(layer.name)
-                
-                Spacer()
-                
-                LayerLoadButtonView(layer: layer)
+                HStack {
+                    Button(action: { clickLayer(layer) }, label: { Image(systemName: layer.state()) })
+                    
+                    LayerIconView(icon: layer.icon)
+                    LayerColorView(color: layer.color)
+                    LayerSymbolView(symbol: layer.symbol)
+                    Text(layer.name)
+                    
+                    Spacer()
+                    
+                    LayerLoadButtonView(layer: layer)
+                }
             }
             Button(action: accept, label: { Text(Config.acceptText) }).padding(.bottom)
         }

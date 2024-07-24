@@ -78,7 +78,7 @@ class FeatureService: IFeatureService {
         
         let token = userService.token
         
-        networkService.getFeatures(with: filter, url: filterUrl, token: token) {features in
+        networkService.getFeatures(with: filter, url: filterUrl, token: token, referer: Config.baseReferer) {features in
             DispatchQueue.main.sync {
                 self.updateFeatures(features)
                 sendObjectChange()

@@ -23,12 +23,13 @@ struct Filter: Encodable {
 class FilterApiRequest: IRequest {
     var urlRequest: URLRequest?
     
-    init(urlString: String, token: String) {
+    init(urlString: String, token: String, referer: String) {
         if let url = URL(string: urlString) {
             urlRequest = URLRequest(url: url)
             urlRequest?.httpMethod = "POST"
             urlRequest?.setValue(token, forHTTPHeaderField: "Token")
             urlRequest?.setValue("application/json", forHTTPHeaderField: "Content-Type")
+            urlRequest?.addValue(referer, forHTTPHeaderField: "Referer")
         }
     }
 }

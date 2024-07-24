@@ -7,7 +7,7 @@ protocol INetworkService {
     func getBaseLayers(_: String, _: @escaping ([BaseLayer]?) -> Void)
     func getLayer(_: String, _: Layer, _: @escaping (MGLShape?, Layer) -> Void)
     func getUser(_: String, _: @escaping (User?) -> Void)
-    func getFeatures(with filter: Filter, url: String, token: String, complition: @escaping ([Feature]?) -> Void)
+    func getFeatures(with filter: Filter, url: String, token: String, referer: String, complition: @escaping ([Feature]?) -> Void)
     func getLayers(_ : String, _ : String?, _ : @escaping ([Layer]?) -> ())
     func getNews(_ : String, _ : @escaping (String?) -> ())
     func sendUserMessage(_ : String, _ : UserMessage, _ : @escaping (Int?) -> ())
@@ -36,8 +36,8 @@ struct RequestsFactory {
                                  parser: UserParser(), uploadData: nil)
         }
         
-        static func filterConfig(_ url: String, _ token: String, _ data: Data?) -> RequestConfig<FeatureListParser> {
-            return RequestConfig(request: FilterApiRequest(urlString: url, token: token),
+        static func filterConfig(_ url: String, _ token: String, _ referer: String, _ data: Data?) -> RequestConfig<FeatureListParser> {
+            return RequestConfig(request: FilterApiRequest(urlString: url, token: token, referer: referer),
                                  parser: FeatureListParser(), uploadData: data)
         }
         
@@ -92,10 +92,10 @@ class NetworkService: INetworkService {
         send(config: config, complitionHandler: complition)
     }
     
-    func getFeatures(with filter: Filter, url: String, token: String, complition: @escaping ([Feature]?) -> ()) {
+    func getFeatures(with filter: Filter, url: String, token: String, referer: String, complition: @escaping ([Feature]?) -> ()) {
         guard let uploadData = try? JSONEncoder().encode(filter) else { return }
         
-        let config = RequestsFactory.NatureRequest.filterConfig(url, token, uploadData)
+        let config = RequestsFactory.NatureRequest.filterConfig(url, token, referer, uploadData)
         send(config: config, complitionHandler: complition)
     }
     
